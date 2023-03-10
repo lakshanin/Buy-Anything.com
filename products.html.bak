@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	
+		<title>Products Page</title>
+		
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+		<link rel="stylesheet" type="text/css" href="products.css">
+		
+		<script src="products.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+		
+	</head>
+	
+	<body>
+	
+		<nav class="navigationBar">
+			<div id="nav" class="font1">
+				<div class="navleft">
+					<a href="HomePage.html"><img class="logo" alt="logo" src= "pics/Green Logo.png"></a>
+					<a href="HomePage.html">Home</a>
+					<a href="Pastorders.html">Past Orders</a>
+					<a href="gallerypage.html">Gallery</a>
+					<a class="active" href="products.html" >Purchase Products</a>
+					<a href="JsQuiz.html" >Quiz</a>
+					<a href="FeedBackForm.html">Send Feedback</a>
+				  
+					<button name="Signup" style="float:right;" class="navbtn" onclick="location.href='signupform.html'">Sign Up</button>
+			
+				</div>
+			</div>
+		</nav>	
+	
+		<div id="div1">
+			<h2 class="title">Ladies Oversize Hoodie</h2>
+			<img src="pics/hoodie-white.jpg" alt="Hoodie Picture" class="pic" id="hoodie">
+			<h3 style="margin-left: 70px" id="hoodiePrice" value="28.30 font-size:">Price: $28.30</h3>
+			<form id = "hoodieForm" name = "hoodieForm" class="form">
+			
+				<h4>Color:</h4>
+				<label for="whiteHoodie">
+					<input type="radio" class="radioColor" id="whiteHoodie" name="color" value="White" onClick="CheckColor('pics/hoodie-white.jpg', 'hoodie')">
+					<img src="pics/hoodie-white.jpg" alt="white hoodie" class="radioColorPic">
+				</label>
+				<label for="pinkHoodie">
+					<input type="radio" class="radioColor" id="pinkHoodie" name="color" value="Pink" onClick="CheckColor('pics/hoodie-pink.jpg', 'hoodie')">
+					<img src="pics/hoodie-pink.jpg"  alt="pink hoodie" class="radioColorPic">
+				</label>
+				<label for="blackHoodie">
+					<input type="radio"class="radioColor"  id="blackHoodie" name="color" value="Black" onClick="CheckColor('pics/hoodie-black.jpg', 'hoodie')">
+					<img src="pics/hoodie-black.jpg"  alt="black hoodie" class="radioColorPic">
+				</label>
+				
+				<label for="purpleHoodie">
+					<input type="radio" class="radioColor" id="purpleHoodie" name="color" value="Purple" onClick="CheckColor('pics/hoodie-purple.jpg', 'hoodie')">
+					<img src="pics/hoodie-purple.jpg"  alt="purple hoodie" class="radioColorPic">
+				</label>
+				
+				<h4>Size:</h4>
+				<div class="sizeChart">
+					<label for="S" class="radioSize">S
+						<input type="radio" class="radioSize" id="S" name="size" value="S">
+						
+					</label>
+					<label for="M" class="radioSize">M
+						<input type="radio" class="radioSize" id="M" name="size" value="M">
+				
+					</label>
+					<label for="L" class="radioSize">L
+						<input type="radio" class="radioSize" id="L" name="size" value="L">
+						
+					</label>
+					<label for="XL" class="radioSize">XL
+						<input type="radio" class="radioSize" id="XL" name="size" value="XL">
+					</label>
+				</div>
+				
+				<h4>Quantity:</h4>
+				<div class="counter">
+					<span onClick='decrementValue("hoodieQuantity")'>-</span>
+					<input type="text" value="0" id="hoodieQuantity">
+					<span onClick='incrementValue("hoodieQuantity")'>+</span>
+				</div>
+				<button type="button" value="add" class="addToCart" id="hoodieAdd" onClick="displayOrder(this.form, 'hoodieQuantity', 'Ladies Oversize Hoodie', 'hoodiePrice')">Add</button>
+			</form>
+		</div>
+		
+		<div id="div2">
+			<div class="fontButtons">
+				<button class="button" onclick="decreaseFont(document.getElementsByTagName('body')[0])">-A</button>
+				<button class="button" onclick="increaseFont(document.getElementsByTagName('body')[0])">+A</button>
+			</div>
+			<h2 class="title">Baby Bodysuit</h2>
+			<img src="pics/onesis-white.jpg" alt="Baby Bodysuit Picture" class="pic" id="onesies">
+			<h3 style="margin-left: 70px" id="onesiesPrice" value="9.50">Price: $9.50</h3>
+			<form id = "onesiesForm" name = "onesiesForm" class="form">
+			
+				<h4>Color:</h4>
+				<label for="whiteOnesies">
+					<input type="radio" class="radioColor" id="whiteOnesies" name="color" value="White" onClick="CheckColor('pics/onesis-white.jpg', 'onesies')">
+					<img src="pics/onesis-white.jpg"  alt="white onesies" class="radioColorPic">
+				</label>
+				<label for="blueOnesies">
+					<input type="radio" class="radioColor" id="blueOnesies" name="color" value="Blue" onClick="CheckColor('pics/onesis-blue.jpg', 'onesies')">
+					<img src="pics/onesis-blue.jpg" alt="blue onesies" class="radioColorPic">
+				</label>
+				
+				<label for="blackOnesies">
+					<input type="radio" class="radioColor"  id="blackOnesies" name="color" value="Black" onClick="CheckColor('pics/onesis-black.jpg', 'onesies')">
+					<img src="pics/onesis-black.jpg" alt="black onesies"class="radioColorPic">
+				</label>
+				<label for="yellowOnesies">
+					<input type="radio" class="radioColor" id= "yellowOnesies" name="color" value="Yellow" onClick="CheckColor('pics/onesis-yellow.jpg', 'onesies')">
+					<img src="pics/onesis-yellow.jpg" alt="yellow onesies" class="radioColorPic">
+				</label>
+				
+				<h4>Size:</h4>
+				<div class="sizeChart">
+					<label for="6" class="radioSize">UK 6
+						<input type="radio" class="radioSize" id="6" name="size" value="UK 6">
+					</label>
+					<label for="8" class="radioSize">UK 8
+						<input type="radio" class="radioSize" id="8" name="size" value="UK 8">
+				
+					</label>
+					<label for="10" class="radioSize">UK 10
+						<input type="radio" class="radioSize" id="12" name="size" value="UK 10">
+						
+					</label>
+					<label for="12" class="radioSize">UK 12
+						<input type="radio" class="radioSize" id="12" name="size" value="UK 12">
+					</label>
+				</div>
+				
+				<h4>Quantity:</h4>
+				<div class="counter">
+					<span onClick='decrementValue("OnesiesQuantity")'>-</span>
+					<input type="text" value="0" id="OnesiesQuantity">
+					<span onClick='incrementValue("OnesiesQuantity")'>+</span>
+				</div>
+				<button type="button" value="add" class="addToCart" id="OnesiesAdd" onClick="displayOrder(this.form, 'OnesiesQuantity', 'Baby Bodysuit', 'onesiesPrice')">Add</button>
+			</form>
+		</div>
+		
+		<div id="div3">
+			<h2 class="title">Ladies Earings</h2>
+			<img src="pics/earing-one.jpg" alt="Ladies Earing Picture" class="pic" id="earing">
+			<h3 style="margin-left: 70px" id="earingPrice" value="7.90">Price: $7.90</h3>
+			<form id = "earingsForm" name = "earingsForm" class="form">
+			
+				<h4>Design:</h4>
+				<label for="earing-one">
+					<input type="radio" class="radioColor" id="earing-one" name="color" value="Design-1" onClick="CheckColor('pics/earing-one.jpg', 'earing')">
+					<img src="pics/earing-one.jpg" alt="earing 1" class="radioColorPic">
+				</label>
+				<label for="earing-two">
+					<input type="radio" class="radioColor" id="earing-two" name="color" value="Design-2" onClick="CheckColor('pics/earing-two.jpg', 'earing')">
+					<img src="pics/earing-two.jpg"alt="earing 2" class="radioColorPic">
+				</label>
+				<label for="earing-three">
+					<input type="radio" class="radioColor"  id="earing-three" name="color" value="Design-3" onClick="CheckColor('pics/earing-three.jpg', 'earing')">
+					<img src="pics/earing-three.jpg" alt="earing 3" class="radioColorPic">
+				</label>
+				<label for="earing-four">
+					<input type="radio" class="radioColor" id="earing-four" name="color" value="Design-4" onClick="CheckColor('pics/earing-four.jpg', 'earing')">
+					<img src="pics/earing-four.jpg" alt="earing 4" class="radioColorPic">
+				</label>
+				<label for="earing-five">
+					<input type="radio" class="radioColor"  id="earing-five" name="color" value="Design-5" onClick="CheckColor('pics/earing-five.jpg', 'earing')">
+					<img src="pics/earing-five.jpg" alt="earing 5" class="radioColorPic">
+				</label>
+
+				<h4>Quantity:</h4>
+				<div class="counter">
+					<span onClick='decrementValue("earingQuantity")'>-</span>
+					<input type="text" value="0" id="earingQuantity">
+					<span onClick='incrementValue("earingQuantity")'>+</span>
+				</div>
+				<button type="button" value="add" class="addToCart" id="earingAdd" onClick="displayOrder(this.form, 'earingQuantity', 'Ladies Earings', 'earingPrice')">Add</button>
+			</form>
+		</div>
+		
+		<div id="div4">
+			<h2 class="title">Oncolor Matte Lipstick</h2>
+			<img src="pics/color-one.png" alt="Lipstick Picture" class="pic" id="lipstic">
+			<h3 style="margin-left: 70px" id="lipsticPrice" value="5.70">Price: $5.70</h3>
+			<form id = "lipstickForm" name = "lipsticForm" class="form">
+			
+				<h4>Color:</h4>
+				<label for="color-one">
+					<input type="radio" class="radioColor" id="color-one" name="color" value="Color-1" onClick="CheckColor('pics/color-one.png', 'lipstic')">
+					<img src="pics/color-one.png" alt="color 1" class="radioColorPic">
+				</label>
+				<label for="color-two">
+					<input type="radio" class="radioColor" id="color-two" name="color" value="Color-2" onClick="CheckColor('pics/color-two.jpg', 'lipstic')">
+					<img src="pics/color-two.jpg" alt="color 2" class="radioColorPic">
+				</label>
+				<label for="color-three">
+					<input type="radio" class="radioColor"  id="color-three" name="color" value="Color-3" onClick="CheckColor('pics/color-three.jpg', 'lipstic')">
+					<img src="pics/color-three.jpg" alt="color 3" class="radioColorPic">
+				</label>
+				<label for="color-four">
+					<input type="radio" class="radioColor" id="color-four" name="color" value="Color-4" onClick="CheckColor('pics/color-four.jpg', 'lipstic')">
+					<img src="pics/color-four.jpg"alt="color 4" class="radioColorPic">
+				</label>
+
+				<h4>Quantity:</h4>
+				<div class="counter">
+					<span onClick='decrementValue("lipsticQuantity")'>-</span>
+					<input type="text" value="0" id="lipsticQuantity">
+					<span onClick='incrementValue("lipsticQuantity")'>+</span>
+				</div>
+				<button type="button" value="add" class="addToCart" id="lipsticAdd" onClick="displayOrder(this.form, 'lipsticQuantity', 'Oncolor Matte Lipstick', 'lipsticPrice')">Add</button>
+			</form>
+		</div>
+		
+		<div id="div5">
+			<div id="div5-1">
+				<h2 class="formTitle" >Order Summary</h2>
+				<div id="summary"></div>
+				<div style=" position: absolute; right: 30px; bottom: 20px; font-size: 30px; color: white;">
+					<h4>Discount: $<span id="discount">0</span></h4>
+					<h4 >Total: $<span id="total">0</span></h4>
+				</div>
+			</div>
+		
+			<div id="div5-2">
+				<form name="orderForm">
+				
+					<h2 class="formTitle"><b>Personal Information</b></h2>
+					<label for="fname" class="fieldLabels">First Name:<span style ="color: red; font-size: 10px; position: absolute; top:0"> *</span>
+						<input class="fields" type="text" placeholder="Enter Your First Name" name="fname" id="fname"/>
+					</label>
+					<br></br>
+					<label for="lname" class="fieldLabels">Last Name:<span style ="color: red; font-size: 10px; position: absolute; top:0"> *</span>
+						<input  class="fields" type="text" placeholder="Enter Your Last Name" name="lname" id="lname">
+					</label>
+					<br></br>
+					<label for="address" class="fieldLabels">Address:<span style ="color: red; font-size: 10px; position: absolute; top:0"> *</span>
+						<input class="fields" type="text" placeholder="Enter Your Address" name="address" id="address">
+					</label>
+					<br></br>
+					<label for="phone" class="fieldLabels">Phone Number:<span style ="color: red; font-size: 10px; position: absolute; top:0"> *</span>
+						<input class="fields" type="tel" placeholder="Enter Your Mobile Number" id="phone" name="phone"/>
+					</label>
+					<br></br>
+					<label for=email" class="fieldLabels">Email:<span style ="color: red; font-size: 10px; position: absolute; top:0"> *</span>
+						<input class="fields" placeholder="Enter Your Email" type="email" name="email" id="email"/>
+					</label>
+					<br></br>
+					<p class="required"><span style ="color: red; font-size: 15px;">*</span> required</p>
+					<br></br>
+					<input type="submit" value="Place Order" id="placeOrder" onclick="alertMsg('summary', 'total')">
+					<input type="reset" value="Reset" id="resetButton" onclick="resetSummary()" >
+				</form>
+				
+			</div>
+		</div>
+		
+		<div class="footer-dark" class="font1">
+			<footer>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 col-md-3 item">
+							<h3>Pages</h3>
+							<ul>
+								<li><a href="HomePage.html">Home</a></li>
+								<li><a href="gallerypage.html">Gallery</a></li>
+								<li><a href="FeedBackForm.html">Feedback</a></li>
+								<li><a href="products.html">Purchase Products</a></li>
+								<li><a href="Activation.html">Newsletter</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-6 col-md-3 item">
+							<h3>About</h3>
+							<ul>
+								<li><a href="aboutUsPage.html">About Us</a></li>
+								<li><a href="editors page.html">About This Page's Editor</a></li>
+							</ul>
+						</div>
+						<div class="col-md-6 item text">
+							<h3>Buy Anything</h3>
+							<p>A company built to satisfy any customer's needs through affordable prices and fast delivery with a wide range of products. This comapny was founded in 2022.</p>
+						</div>
+						<div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+					</div>
+					<p class="copyright">Buy Anything © 2018</p>
+				</div>
+			</footer>
+		</div>
+		
+	</body>
+</html>
